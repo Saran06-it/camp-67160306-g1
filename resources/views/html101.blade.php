@@ -12,16 +12,18 @@
         <style>
             body{
                 font-family: "Titan One", sans-serif;
-                margin: 0;
-                height: 100vh;
-        
-                background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-                overflow: hidden;
-                color: #ffffff;
-                h1 {
-                    font-family: "Titan One", sans-serif;
-                    color:yellow;
-                }
+                background-image: url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*OAXivevUVDA6ddtq-7jwVw.gif");
+                background-size: cover;      /* ให้ภาพเต็มจอ */
+                background-repeat: no-repeat; /* ไม่ให้วนซ้ำ */
+                background-attachment: fixed; /* เลื่อนหน้า แต่พื้นหลังอยู่กับที่ */
+                color: #ffffffff;
+
+                text-shadow: 
+                -2px -2px 0 #000, /* บนซ้าย */
+                 2px -2px 0 #000, /* บนขวา */
+                -2px  2px 0 #000, /* ล่างซ้าย */
+                 2px  2px 0 #000; /* ล่างขวา */
+                
             }
         </style>
     </head>
@@ -145,19 +147,10 @@
                         <button type="reset" class="btn btn-light" value = "reset">Reset</button>
                     </div>
                 </div>
+        
             </form>
 
-        <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*OAXivevUVDA6ddtq-7jwVw.gif" class="floating-gif">
-        <style>
-            .floating-gif {
-                position: fixed;
-                right: 110px;        
-                top: 50%;
-                transform: translateY(-50%);   
-                width: 600px;       
-                z-index: 999;       
-            }
-        </style>
+
         </div>
 
     </body>
