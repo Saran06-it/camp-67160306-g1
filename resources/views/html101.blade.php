@@ -12,17 +12,18 @@
         <style>
             body{
                 font-family: "Titan One", sans-serif;
-                background-image: url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*OAXivevUVDA6ddtq-7jwVw.gif");
-                background-size: cover;      /* ให้ภาพเต็มจอ */
-                background-repeat: no-repeat; /* ไม่ให้วนซ้ำ */
-                background-attachment: fixed; /* เลื่อนหน้า แต่พื้นหลังอยู่กับที่ */
+                background : #182b99ff;
+                /*background-image: url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*OAXivevUVDA6ddtq-7jwVw.gif");
+                background-size: cover;      
+                background-repeat: no-repeat; 
+                background-attachment: fixed; */
                 color: #ffffffff;
 
                 text-shadow: 
-                -2px -2px 0 #000, /* บนซ้าย */
-                 2px -2px 0 #000, /* บนขวา */
-                -2px  2px 0 #000, /* ล่างซ้าย */
-                 2px  2px 0 #000; /* ล่างขวา */
+                -2px -2px 0 #000,
+                 2px -2px 0 #000, 
+                -2px  2px 0 #000, 
+                 2px  2px 0 #000; 
                 
             }
         </style>
@@ -114,12 +115,12 @@
                 <!--Music-->
                 <div class="row mb-3 align-items-center">
                     <div class="col-auto">
-                        <label for="favcolor">Music Class</label>
+                        <label for="favcolor">Music Genres</label>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-check1 form-check-inline">
                             <input class="form-check1-input" type="radio" name="radioDefault1" id="radioDefault1">
-                            <label class="form-check1-label" for="radioDefault1"> String </label>
+                            <label class="form-check1-label" for="radioDefault1"> Rock </label>
                         </div>
                         <div class="form-check1 form-check-inline">
                             <input class="form-check1-input" type="radio" name="radioDefault1" id="radioDefault2" checked>
