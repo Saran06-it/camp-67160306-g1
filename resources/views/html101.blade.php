@@ -1,75 +1,52 @@
-<!-- dddddddd -->
+@extends('template.default')
 
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <link rel = "stylesheet" href="css/bootstrap.css">
-        <title> Saran </title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bungee+Spice&family=Titan+One&display=swap" rel="stylesheet">
-        <style>
-            body{
-                font-family: "Titan One", sans-serif;
-                background : #182b99ff;
-                /*background-image: url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*OAXivevUVDA6ddtq-7jwVw.gif");
-                background-size: cover;      
-                background-repeat: no-repeat; 
-                background-attachment: fixed; */
-                color: #ffffffff;
-
-                text-shadow: 
-                -2px -2px 0 #000,
-                 2px -2px 0 #000, 
-                -2px  2px 0 #000, 
-                 2px  2px 0 #000; 
-                
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="container mt-4">
-            <h1>Workshop #HTML - FORM</h1>
-            <hr></hr>
+@section('content')
+<h1>Workshop #HTML - FORM</h1>
+<hr></hr>
             <form>
+
                 <!--- Name--->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label for="fname" >Name</label>
                     </div>
-                    <div class="col-sm-3">
-                        <input id="fname" name="fname" type="text" class="form-control">
+                    <div class="col">
+                        <input id="fname" name="fname" type="text" class="form-control ">
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                        </div>
+                        <div class="invalid-feedback">
+                            โปรดระบุชื่อ
+                        </div>
                     </div>
                 </div>
 
                 <!---SurName--->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label for="Sname" >Surname</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <input id="Sname" class="form-control">
                     </div>
                 </div>
 
                 <!---BirthDay--->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label for="birthday">Birthday</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <input id="birthday" name="birthday" type="date" class="form-control">
                     </div>
                 </div>
 
                 <!---Gender--->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label for="favcolor">Gender</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
                             <label class="form-check-label" for="radioDefault1"> Male </label>
@@ -80,44 +57,44 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <!---Image--->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label for="myfile">Image</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <input  type="file" id = "myfile" name= "myfile" >
                     </div>
                 </div>
 
                 <!--Address-->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label for="address">Address</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <textarea id="address" name="address" rows="3" class="form-control"></textarea>
                     </div>
                 </div>
-                
+
                 <!--Color-->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-auto">
+                    <div class="col-sm-2">
                         <label for="favcolor">Faverite Color</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <input type="color" id="favcolor" name="favcolor" class="form-control form-control-color">
                     </div>
                 </div>
-                
+
                 <!--Music-->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-auto">
+                    <div class="col-sm-2">
                         <label for="favcolor">Music Genres</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <div class="form-check1 form-check-inline">
                             <input class="form-check1-input" type="radio" name="radioDefault1" id="radioDefault1">
                             <label class="form-check1-label" for="radioDefault1"> Rock </label>
@@ -142,17 +119,38 @@
                 <!--Success-->
                 <div class="row mb-3 align-items-center">
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-success" value = "submit">Success</button>
+                        <button type="button" class="btn btn-success" value = "submit"  onclick = "clickMe()" > Success </button>
                     </div>
                     <div class="col-sm-3">
-                        <button type="reset" class="btn btn-light" value = "reset">Reset</button>
+                        <button type="reset" class="btn btn-light"  value = "reset"  >Reset</button>
                     </div>
                 </div>
-        
+
             </form>
+@endsection
 
+@push('scripts')
+    <script>
 
-        </div>
+        clickMe = function (){
 
-    </body>
-</html>
+            let fname = document.getElementById('fname')
+            console.log(fname.value)
+
+            if(fname.value == "") {
+                fname.classList.remove('is-valid')
+                fname.classList.add('is-invalid')
+            } else{
+                fname.classList.remove('is-invalid')
+                fname.classList.add('is-valid')
+            }
+        }
+
+        let myvar1 = 1
+        let myvar2 = "1"
+        myvar2 = parseInt(myvar2)
+
+        console.log(myvar2 + myvar1)
+    </script>
+@endpush
+
