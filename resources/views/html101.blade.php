@@ -140,17 +140,12 @@
             if(fname.value == "") {
                 fname.classList.remove('is-valid')
                 fname.classList.add('is-invalid')
-            } else{
+            }else{
                 fname.classList.remove('is-invalid')
                 fname.classList.add('is-valid')
             }
         }
 
-        let myvar1 = 1
-        let myvar2 = "1"
-        myvar2 = parseInt(myvar2)
-
-        console.log(myvar2 + myvar1)
     </script>
 @endpush
 
