@@ -22,7 +22,6 @@
 
             }
 
-
             .container {
                 width: 600px;
                 margin: 100px auto;
@@ -33,13 +32,16 @@
                 backdrop-filter: blur(3px);
             }
 
+
+
         </style>
         @stack('styles')
     </head>
 
     <body>
         <div class = "container">
-            <h1>File Default</h1>
+            @yield('header')
+
             @yield('content')
         </div>
         @stack('scripts')

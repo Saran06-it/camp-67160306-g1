@@ -4,7 +4,6 @@
 <h1>Workshop #HTML - FORM</h1>
 <hr></hr>
             <form>
-
                 <!--- Name--->
                 <div class="row mb-3 align-items-center">
                     <div class="col-sm-2">
@@ -28,6 +27,12 @@
                     </div>
                     <div class="col">
                         <input id="Sname" class="form-control">
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                        </div>
+                        <div class="invalid-feedback">
+                            โปรดระบุนามสกุล
+                        </div>
                     </div>
                 </div>
 
@@ -38,6 +43,12 @@
                     </div>
                     <div class="col">
                         <input id="birthday" name="birthday" type="date" class="form-control">
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                        </div>
+                        <div class="invalid-feedback">
+                            โปรดระบุวันเกิด
+                        </div>
                     </div>
                 </div>
 
@@ -48,12 +59,12 @@
                     </div>
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-                            <label class="form-check-label" for="radioDefault1"> Male </label>
+                            <input class="form-check-input" type="radio" name="radioDefault" id="genderMale">
+                            <label for="genderMale"> Male </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
-                            <label class="form-check-label" for="radioDefault2"> Female </label>
+                            <input class="form-check-input" type="radio" name="radioDefault" id="genderFemale">
+                            <label for="genderFemale"> Female </label>
                         </div>
                     </div>
                 </div>
@@ -76,6 +87,12 @@
                     </div>
                     <div class="col">
                         <textarea id="address" name="address" rows="3" class="form-control"></textarea>
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                        </div>
+                        <div class="invalid-feedback">
+                            โปรดระบุที่อยู่
+                        </div>
                     </div>
                 </div>
 
@@ -96,16 +113,16 @@
                     </div>
                     <div class="col">
                         <div class="form-check1 form-check-inline">
-                            <input class="form-check1-input" type="radio" name="radioDefault1" id="radioDefault1">
-                            <label class="form-check1-label" for="radioDefault1"> Rock </label>
+                            <input class="form-check-input" type="radio" name="radioDefault1" id="musicRock">
+                            <label for="musicRock"> Rock </label>
                         </div>
                         <div class="form-check1 form-check-inline">
-                            <input class="form-check1-input" type="radio" name="radioDefault1" id="radioDefault2" checked>
-                            <label class="form-check1-label" for="radioDefault2"> Pop </label>
+                            <input class="form-check-input" type="radio" name="radioDefault1" id="musicPop">
+                            <label for="musicPop"> Pop </label>
                         </div>
                         <div class="form-check1 form-check-inline">
-                            <input class="form-check1-input" type="radio" name="radioDefault1" id="radioDefault3" checked>
-                            <label class="form-check1-label" for="radioDefault3"> Etc.</label>
+                            <input class="form-check-input" type="radio" name="radioDefault1" id="musicEtc">
+                            <label for="musicEtc"> Etc. </label>
                         </div>
                     </div>
                 </div>
@@ -132,19 +149,62 @@
 @push('scripts')
     <script>
 
-        clickMe = function (){
+        function clickMe() {
 
-            let fname = document.getElementById('fname')
-            console.log(fname.value)
+        let fname = document.getElementById('fname');
+        let Sname = document.getElementById('Sname');
+        let birthday = document.getElementById('birthday');
+        let address = document.getElementById('address');
+        let checkbox = document.getElementById('defaultCheck1');
 
-            if(fname.value == "") {
-                fname.classList.remove('is-valid')
-                fname.classList.add('is-invalid')
-            }else{
-                fname.classList.remove('is-invalid')
-                fname.classList.add('is-valid')
-            }
+        let isValid = true;
+
+        // Name
+        if (fname.value === "") {
+            fname.classList.add('is-invalid');
+            fname.classList.remove('is-valid');
+            isValid = false;
+        } else {
+            fname.classList.add('is-valid');
+            fname.classList.remove('is-invalid');
         }
+
+        // Surname
+        if (Sname.value === "") {
+            Sname.classList.add('is-invalid');
+            Sname.classList.remove('is-valid');
+            isValid = false;
+        } else {
+            Sname.classList.add('is-valid');
+            Sname.classList.remove('is-invalid');
+        }
+
+        // Birthday
+        if (birthday.value === "") {
+            birthday.classList.add('is-invalid');
+            birthday.classList.remove('is-valid');
+            isValid = false;
+        } else {
+            birthday.classList.add('is-valid');
+            birthday.classList.remove('is-invalid');
+        }
+
+        // Address
+        if (address.value === "") {
+            address.classList.add('is-invalid');
+            address.classList.remove('is-valid');
+            isValid = false;
+        } else {
+            address.classList.add('is-valid');
+            address.classList.remove('is-invalid');
+        }
+
+
+        if (!checkbox.checked) {
+            isValid = false;
+        }
+
+    }
 
     </script>
 @endpush
