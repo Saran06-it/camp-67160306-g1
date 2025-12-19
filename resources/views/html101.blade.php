@@ -55,16 +55,19 @@
                 <!---Gender--->
                 <div class="row mb-3 align-items-center">
                     <div class="col-sm-2">
-                        <label for="favcolor">Gender</label>
+                        <label>Gender</label>
                     </div>
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="genderMale">
+                            <input class="form-check-input gender" type="radio" name="gender" id="genderMale">
                             <label for="genderMale"> Male </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="genderFemale">
+                            <input class="form-check-input gender" type="radio" name="gender" id="genderFemale">
                             <label for="genderFemale"> Female </label>
+                        </div>
+                        <div class="invalid-feedback" id="GenderError">
+                            โปรดเลือกเพศ
                         </div>
                     </div>
                 </div>
@@ -77,6 +80,12 @@
                     </div>
                     <div class="col">
                         <input  type="file" id = "myfile" name= "myfile" >
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                        </div>
+                        <div class="invalid-feedback">
+                            โปรดแนบรูปภาพ
+                        </div>
                     </div>
                 </div>
 
@@ -109,28 +118,36 @@
                 <!--Music-->
                 <div class="row mb-3 align-items-center">
                     <div class="col-sm-2">
-                        <label for="favcolor">Music Genres</label>
+                        <label>Music Genres</label>
                     </div>
                     <div class="col">
                         <div class="form-check1 form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault1" id="musicRock">
+                            <input class="form-check-input" type="radio" name="music" id="musicRock">
                             <label for="musicRock"> Rock </label>
                         </div>
-                        <div class="form-check1 form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault1" id="musicPop">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="music" id="musicPop">
                             <label for="musicPop"> Pop </label>
                         </div>
-                        <div class="form-check1 form-check-inline">
-                            <input class="form-check-input" type="radio" name="radioDefault1" id="musicEtc">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="music" id="musicEtc">
                             <label for="musicEtc"> Etc. </label>
+                        </div>
+                        <div class="invalid-feedback" id="musicError" >
+                            โปรดเลือกแนวเพลง
                         </div>
                     </div>
                 </div>
 
                 <!--CheckBox-->
                 <div class="Check mb-3">
-                    <input class="Check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="Check-label" for="defaultCheck1"> ยินดีให้เก็บข้อมูล </label>
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        ยินยอมให้เก็บข้อมูล
+                    </label>
+                    <div class="invalid-feedback">
+                        กรุณาอนุมัติความยินยอม
+                    </div>
                 </div>
 
                 <!--Success-->
@@ -155,9 +172,9 @@
         let Sname = document.getElementById('Sname');
         let birthday = document.getElementById('birthday');
         let address = document.getElementById('address');
-        let checkbox = document.getElementById('defaultCheck1');
+        let checkbox = document.getElementById('invalidCheck');
+        let myfile = document.getElementById('myfile');
 
-        let isValid = true;
 
         // Name
         if (fname.value === "") {
@@ -199,9 +216,62 @@
             address.classList.remove('is-invalid');
         }
 
-
-        if (!checkbox.checked) {
+        // Image
+        if (myfile.value === "") {
+            myfile.classList.add('is-invalid');
+            myfile.classList.remove('is-valid');
             isValid = false;
+        } else {
+            myfile.classList.add('is-valid');
+            myfile.classList.remove('is-invalid');
+        }
+
+        // checkbox
+        if (!checkbox.checked) {
+            checkbox.classList.add('is-invalid');
+            checkbox.classList.remove('is-valid');
+            isValid = false;
+        } else {
+            checkbox.classList.add('is-valid');
+            checkbox.classList.remove('is-invalid');
+        }
+
+        // Music
+        let music = document.getElementsByName('music');
+        let musicError = document.getElementById('musicError');
+
+        let musicChecked = false;
+
+        for (let i = 0; i < music.length; i++) {
+            if (music[i].checked) {
+                musicChecked = true;
+                break;
+            }
+        }
+        if (!musicChecked) {
+            musicError.style.display = "block";
+            isValid = false;
+        } else {
+            musicError.style.display = "none";
+        }
+
+        // Music
+        let gender = document.getElementsByName('gender');
+        let GenderError = document.getElementById('GenderError');
+
+        let GenderChecked = false;
+
+        for (let i = 0; i < gender.length; i++) {
+            if (gender[i].checked) {
+                GenderChecked = true;
+                break;
+            }
+        }
+        if (!GenderChecked) {
+            GenderError.style.display = "block";
+            isValid = false;
+        } else {
+            GenderError.style.display = "none";
         }
 
     }
