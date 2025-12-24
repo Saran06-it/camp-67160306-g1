@@ -27,6 +27,19 @@ class MyController extends Controller
         $data['num'] = $req->Input('mynumber');
         return view('myview.calculate', $data);
     }
+    function submitForm(Request $req)
+    {
+        $data = [
+            'fname'    => $req->fname,
+            'Sname'    => $req->Sname,
+            'birthday' => $req->birthday,
+            'gender'   => $req->gender,
+            'address'  => $req->address,
+            'music'    => $req->music,
+        ];
+
+    return view('myview.html101_view', compact('data'));
+}
 
 
 }

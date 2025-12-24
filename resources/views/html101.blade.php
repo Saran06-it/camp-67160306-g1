@@ -3,7 +3,8 @@
 @section('content')
 <h1>Workshop #HTML - FORM</h1>
 <hr></hr>
-            <form>
+            <form action="/submitForm" method="POST" enctype="multipart/form-data">
+                @csrf
                 <!--- Name--->
                 <div class="row mb-3 align-items-center">
                     <div class="col-sm-2">
@@ -26,7 +27,7 @@
                         <label for="Sname" >Surname</label>
                     </div>
                     <div class="col">
-                        <input id="Sname" class="form-control">
+                        <input id="Sname" class="form-control" name = "Sname">
                         <div class="valid-feedback">
                             ถูกต้อง
                         </div>
@@ -59,11 +60,11 @@
                     </div>
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input gender" type="radio" name="gender" id="genderMale">
+                            <input class="form-check-input gender" type="radio" name="gender" id="genderMale" value = "Male">
                             <label for="genderMale"> Male </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input gender" type="radio" name="gender" id="genderFemale">
+                            <input class="form-check-input gender" type="radio" name="gender" id="genderFemale" value = "FeMale">
                             <label for="genderFemale"> Female </label>
                         </div>
                         <div class="invalid-feedback" id="GenderError">
@@ -122,15 +123,15 @@
                     </div>
                     <div class="col">
                         <div class="form-check1 form-check-inline">
-                            <input class="form-check-input" type="radio" name="music" id="musicRock">
+                            <input class="form-check-input" type="radio" name="music" id="musicRock" value = "Rock">
                             <label for="musicRock"> Rock </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="music" id="musicPop">
+                            <input class="form-check-input" type="radio" name="music" id="musicPop" value = "Pop">
                             <label for="musicPop"> Pop </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="music" id="musicEtc">
+                            <input class="form-check-input" type="radio" name="music" id="musicEtc" value = "Etc.">
                             <label for="musicEtc"> Etc. </label>
                         </div>
                         <div class="invalid-feedback" id="musicError" >
@@ -153,7 +154,7 @@
                 <!--Success-->
                 <div class="row mb-3 align-items-center">
                     <div class="col-auto">
-                        <button type="button" class="btn btn-success" value = "submit"  onclick = "clickMe()" > Success </button>
+                        <button type="submit" class="btn btn-success" value = "submit"  onclick = "clickMe()" > Success </button>
                     </div>
                     <div class="col-sm-3">
                         <button type="reset" class="btn btn-light"  value = "reset"  >Reset</button>
