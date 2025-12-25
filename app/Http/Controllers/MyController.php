@@ -36,6 +36,7 @@ class MyController extends Controller
             'gender'   => $req->gender,
             'address'  => $req->address,
             'music'    => $req->music,
+            'favcolor' => $req->favcolor,
         ];
 
     return view('myview.html101_view', compact('data'));
