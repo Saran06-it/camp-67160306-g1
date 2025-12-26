@@ -1,0 +1,28 @@
+   <h1>Flights Lists</h1>
+
+    <table class = "table">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>airline</td>
+            <td>number_of_seats</td>
+            <td>price</td>
+            <td></td>
+        </tr>
+        </thead>
+        <?php foreach($flight as $item) {?>
+        <tr>
+            <td>{{ $item->id}}</td>
+            <td>{{ $item->name}}</td>
+            <td>{{ $item->airline}}</td>
+            <td>{{ $item->number_of_seats}}</td>
+            <td>{{ $item->price}}</td>
+            <td>
+                 <a href="{{url('/flights/' .$item-> id . 'edit')}}"> แก้ไข </a>
+                 <form>
+                 </form>
+            </td>
+        </tr>
+        <?php } ?>
+    </table>

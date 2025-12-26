@@ -3,7 +3,7 @@
 @section('content')
 <h1>Workshop #HTML - FORM</h1>
 <hr></hr>
-            <form action="/submitForm" method="POST" enctype="multipart/form-data">
+            <form action="/submitForm" method="POST">
                 @csrf
                 <!--- Name--->
                 <div class="row mb-3 align-items-center">
