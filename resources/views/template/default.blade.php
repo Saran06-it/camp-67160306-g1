@@ -43,6 +43,7 @@
             @yield('header')
 
             @yield('content')
+            @yield('content1')
         </div>
         @stack('scripts')
     </body>

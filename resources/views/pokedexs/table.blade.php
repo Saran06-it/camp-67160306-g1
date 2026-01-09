@@ -39,7 +39,6 @@
                     แก้ไข
                  </a>
                 <form action = "{{url('/pokedexs/'.$item->id)}}" method="POST" style= "display:inline-block">
-
                     @csrf
                     @method('delete')
                     <button class="btn btn-danger">ลบ</button>
