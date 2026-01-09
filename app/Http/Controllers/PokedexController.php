@@ -49,7 +49,8 @@ class PokedexController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pokedex = Pokedex::findOrFail($id);
+        return view('pokedexs.show', compact('pokedex'));
     }
 
     /**

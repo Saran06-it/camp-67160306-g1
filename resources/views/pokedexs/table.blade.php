@@ -19,7 +19,11 @@
         <?php foreach($pokedex as $item) {?>
         <tr>
             <td>{{ $item->id}}</td>
-            <td>{{ $item->name}}</td>
+            <td>
+                <a href="{{ url('/pokedexs/' . $item->id) }}" class="text-decoration-none fw-bold">
+                    {{ $item->name }}
+                </a>
+            </td>
             <td>{{ $item->type}}</td>
             <td>{{ $item->species}}</td>
             <td>{{ $item->height}}</td>

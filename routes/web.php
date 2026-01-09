@@ -18,3 +18,5 @@ Route::post('/submitForm' , [App\Http\Controllers\MyController::class , 'submitF
 
 Route::resource('/flights', App\Http\Controllers\FlightController::class);
 Route::resource('/pokedexs', App\Http\Controllers\PokedexController::class);
+Route::get('/pokedexs/{id}', [PokedexController::class, 'show']);
+

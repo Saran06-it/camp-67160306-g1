@@ -55,7 +55,7 @@
         </div>
 
         <div class="col-md-4">
-            <label for="image_url">Image</label>
+            <label for="image_url">Image_URL</label>
             <input class="form-control" type="url" name="image_url" id="image_url">
         </div>
     </div>
