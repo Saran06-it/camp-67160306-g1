@@ -4,8 +4,8 @@
 
 <h1 class="mb-4">{{ $pokedex->name }}</h1>
 
-<div class="card">
-    <div class="row">
+    <div class="card">
+    <div class="row align-items-center">
         <div class="col">
             <img src="{{ $pokedex->image_url }}"
                  class="img-fluid rounded"
@@ -28,6 +28,6 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 @endsection

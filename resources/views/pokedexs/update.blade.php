@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="mb-4">Edit Pokedex</h1>
+<h1 class="mb-3">Edit Pokedex</h1>
 
 <form action="{{ url('/pokedexs/'.$pokedex_update->id) }}" method="POST" class="pokedex-form">
     @csrf
@@ -58,6 +58,6 @@
     </div>
 </form>
 
-@include('pokedexs.table')
+@include('pokedexs.info')
 
 @endsection

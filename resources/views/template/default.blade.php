@@ -22,7 +22,7 @@
             }
 
             .container {
-                width:fit-content;
+                width:100%;
                 max-width: 1000px;
                 margin: 100px auto;
                 padding: 20px;
@@ -30,6 +30,17 @@
                 border-radius: 10px;
                 background: #273EC0FF;
                 backdrop-filter: blur(3px);
+            }
+            table {
+                width: 100%;
+                table-layout:auto;
+                background: white;
+                color: black;
+            }
+
+            th, td {
+                text-align: center;
+                vertical-align: middle;
             }
 
 
