@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <link rel = "stylesheet" href="css/bootstrap.css">
+        <link rel = "stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <title> Saran </title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +19,11 @@
                 background-attachment: fixed; */
                 color: #ffffffff;
                 display: flex;
-
             }
 
             .container {
-                width: 600px;
+                width:fit-content;
+                max-width: 1000px;
                 margin: 100px auto;
                 padding: 20px;
                 border: 2px solid #273EC0FF;

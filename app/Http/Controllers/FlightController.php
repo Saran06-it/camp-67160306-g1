@@ -23,7 +23,6 @@ class FlightController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -53,8 +52,11 @@ class FlightController extends Controller
      */
     public function edit(string $id)
     {
-        $data['flights_update'];
+        $data['flight_update'] = Flight::find($id);
         $data['flight'] = Flight::all();
+
+        return view('flights.update', $data);
+
     }
 
     /**

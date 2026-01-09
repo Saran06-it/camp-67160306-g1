@@ -1,4 +1,4 @@
-   <h1>Flights Lists</h1>
+<h1>Flights Lists</h1>
 
     <table class = "table">
         <thead>
@@ -19,9 +19,15 @@
             <td>{{ $item->number_of_seats}}</td>
             <td>{{ $item->price}}</td>
             <td>
-                 <a href="{{url('/flights/' .$item-> id . 'edit')}}"> แก้ไข </a>
-                 <form>
-                 </form>
+                 <a class = "btn btn-warning" href ="{{url('/flights/' .$item-> id . '/edit')}}">
+                    แก้ไข
+                 </a>
+                <form action = "{{url('/flights/'.$item->id)}}" method="POST" style= "display:inline-block">
+
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger">ลบ</button>
+                </form>
             </td>
         </tr>
         <?php } ?>
